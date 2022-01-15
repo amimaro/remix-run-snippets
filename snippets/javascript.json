@@ -1,0 +1,11 @@
+{
+  "Broader description goes here": {
+    "prefix": "test",
+    "body": [
+      "snippet bodyline1",
+      "snippet bodyline2",
+      "last line"
+    ],
+    "description": "Here, input simple description. It will show up as you start type the prefix on VS Code editing window"
+  }
+}

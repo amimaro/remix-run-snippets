@@ -2,9 +2,14 @@
     "name": "remix-run-snippets",
     "displayName": "Remix Run Snippets",
     "description": "Remix Run Snippets toolbox",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "amimaro",
-    "repository": "https://github.com/amimaro/remix-run-snippets",
+    "license": "MIT",
+    "icon": "icon.png",
+    "repository": {
+        "url": "https://github.com/amimaro/remix-run-snippets.git",
+        "type": "git"
+    },
     "engines": {
         "vscode": "^1.63.0"
     },

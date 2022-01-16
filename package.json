@@ -16,6 +16,14 @@
     "categories": [
         "Snippets"
     ],
+    "keywords": [
+        "remix",
+        "remix.run",
+        "remix run",
+        "remix run snippets",
+        "snippets",
+        "code snippets"        
+    ],
     "contributes": {
         "snippets": [
             {

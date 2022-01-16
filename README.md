@@ -4,7 +4,7 @@ Set of snippets aimed at developing faster using [Remix](https://remix.run/).
 
 ## Features
 
-![remix snippet default function example](https://github.com/amimaro/remix-run-snippets/blob/main/remix-default-function.gif)
+![remix snippet default function example](https://raw.githubusercontent.com/amimaro/remix-run-snippets/main/remix-default-function.gif)
 
 Get access to the set of snippets by typing `remix` prefix to start developing.
 

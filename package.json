@@ -3,6 +3,8 @@
     "displayName": "Remix Run Snippets",
     "description": "Remix Run Snippets toolbox",
     "version": "1.0.0",
+    "publisher": "amimaro",
+    "repository": "https://github.com/amimaro/remix-run-snippets",
     "engines": {
         "vscode": "^1.63.0"
     },

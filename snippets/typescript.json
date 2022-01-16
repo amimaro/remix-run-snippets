@@ -1,11 +1,112 @@
 {
-  "Broader description goes here": {
-    "prefix": "test",
+  "Remix Default Function": {
+    "prefix": "remix-default-function",
     "body": [
-      "snippet bodyline1",
-      "snippet bodyline2",
-      "last line"
+      "export default function $1() {",
+      "  return (",
+      "    <div>",
+      "      $2",
+      "    </div>",
+      "  );",
+      "}"
     ],
-    "description": "Here, input simple description. It will show up as you start type the prefix on VS Code editing window"
+    "description": "Default function which renders the component when the route matches."
+  },
+  "Remix Loader Function": {
+    "prefix": "remix-loader",
+    "body": [
+      "export const loader: LoaderFunction = async ($1) => {",
+      "  $2",
+      "  return {$3}",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
+  "Remix Action Function": {
+    "prefix": "remix-action",
+    "body": [
+      "export const action: ActionFunction = async ($1) => {",
+      "  $2",
+      "};"
+    ],
+    "description": "Function called on server side to handle data mutation and other actions."
+  },
+  "Remix Headers": {
+    "prefix": "remix-headers",
+    "body": [
+      "export function headers({ loaderHeaders, parentHeaders }) {",
+      "  return {",
+      "    \"$1\": $2",
+      "  };",
+      "};"
+    ],
+    "description": "Function to define headers by route."
+  },
+  "Remix Meta": {
+    "prefix": "remix-meta",
+    "body": [
+      "export const meta: MetaFunction = () => {",
+      "  return {",
+      "    title: \"$1\",",
+      "    description: \"$2\"",
+      "  };",
+      "};"
+    ],
+    "description": "Function to define meta tags by route."
+  },
+  "Remix Links": {
+    "prefix": "remix-links",
+    "body": [
+      "export const links = () => {",
+      "  return [",
+      "    { rel: \"$1\", href: \"$2\" }",
+      "  ];",
+      "};"
+    ],
+    "description": "Function to define links by route."
+  },
+  "Remix CatchBoundary": {
+    "prefix": "remix-catch-boundary",
+    "body": [
+      "export function CatchBoundary() {",
+      "  const caught = useCatch();",
+      "  $1",
+      "  return (",
+      "    <div>",
+      "      <h1>Caught</h1>",
+      "      <p>Status: {caught.status}</p>",
+      "      <pre>",
+      "        <code>{JSON.stringify(caught.data, null, 2)}</code>",
+      "      </pre>",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React component that renders whenever an action or loader throws a Response."
+  },
+  "Remix ErrorBoundary": {
+    "prefix": "remix-error-boundary",
+    "body": [
+      "export function ErrorBoundary({ error }: { error: Error }) {",
+      "  return (",
+      "    <div>",
+      "      <h1>Error</h1>",
+      "      <p>{error.message}</p>",
+      "      <p>The stack trace is:</p>",
+      "      <pre>{error.stack}</pre>",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React component that renders whenever there is an error anywhere on the route, either during rendering or during data loading"
+  },
+  "Remix Handle": {
+    "prefix": "remix-handle",
+    "body": [
+      "export const handle = {",
+      "  $1",
+      "};"
+    ],
+    "description": "handle allows you to create application conventions with the useMatches() hook."
   }
 }

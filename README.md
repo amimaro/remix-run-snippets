@@ -40,6 +40,14 @@ Initial release of `remix-run-snippets` with the following snippets for `.js`, `
 - ErrorBoundary
 - Handle
 
+### 1.0.1
+
+Just fixed the README.md gif path.
+
+### 1.0.2
+
+Added extension icon.
+
 -----------------------------------------------------------------------------------------------------------
 
 **Enjoy!**

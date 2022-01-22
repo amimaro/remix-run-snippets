@@ -1,6 +1,6 @@
 # Remix.run Snippets
 
-Set of snippets aimed at developing faster using [Remix](https://remix.run/).
+Set of snippets for a faster [Remix](https://remix.run/) development.
 
 ## Features
 

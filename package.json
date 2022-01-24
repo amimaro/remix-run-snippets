@@ -1,8 +1,8 @@
 {
     "name": "remix-run-snippets",
     "displayName": "Remix Run Snippets",
-    "description": "Remix Run Snippets toolbox",
-    "version": "1.0.3",
+    "description": "Remix Run Snippets for a faster development.",
+    "version": "1.0.4",
     "publisher": "amimaro",
     "license": "MIT",
     "icon": "icon.png",
@@ -21,8 +21,9 @@
         "remix.run",
         "remix run",
         "remix run snippets",
+        "snippet",
         "snippets",
-        "code snippets"        
+        "code snippets"
     ],
     "contributes": {
         "snippets": [

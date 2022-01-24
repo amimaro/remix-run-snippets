@@ -57,7 +57,7 @@
   "Remix Links": {
     "prefix": "remix-links",
     "body": [
-      "export const links = () => {",
+      "export const links: LinksFunction = () => {",
       "  return [",
       "    { rel: \"$1\", href: \"$2\" }",
       "  ];",

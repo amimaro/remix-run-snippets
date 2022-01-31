@@ -4,7 +4,7 @@ Set of snippets for a faster [Remix](https://remix.run/) development.
 
 ## Features
 
-![remix snippet default function example](https://raw.githubusercontent.com/amimaro/remix-run-snippets/main/remix-default-function.gif)
+![remix snippet default function example](https://raw.githubusercontent.com/amimaro/remix-run-snippets/main/remix-fast-track.gif)
 
 Get access to the set of snippets by typing `remix` prefix to start developing.
 
@@ -140,6 +140,10 @@ Update README and added more tags.
 ### 1.0.4
 
 Fix typescript links snippet
+
+### 1.0.5
+
+Update example gif.
 
 ---
 

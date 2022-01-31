@@ -63,7 +63,7 @@ export const meta: MetaFunction = () => {
 - Links
 
 ```
-export const links = () => {
+export const links: LinksFunction = () => {
   return [
     { rel: "", href: "" }
   ];
@@ -136,6 +136,10 @@ Added extension icon.
 ### 1.0.3
 
 Update README and added more tags.
+
+### 1.0.4
+
+Fix typescript links snippet
 
 ---
 

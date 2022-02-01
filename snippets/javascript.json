@@ -22,11 +22,40 @@
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
+  "Remix Loader Function Session": {
+    "prefix": "remix-loader-session",
+    "body": [
+      "export const loader = async ({ request }) => {",
+      "  const session = await getSession(request.headers.get(\"Cookie\"));",
+      "  $3",
+      "  return ${1|json,redirect|}($2, {",
+      "    headers: {",
+      "      \"Set-Cookie\": await commitSession(session),",
+      "    },",
+      "  });",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
+  "Remix Loader Function Params": {
+    "prefix": "remix-loader-params",
+    "body": [
+      "export const loader = async ({ request }) => {",
+      "  const url = new URL(request.url);",
+      "  const $2 = url.searchParams.${1|get,getAll|}(\"$2\")",
+      "  $3",
+      "  return {$4}",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
   "Remix Action Function": {
     "prefix": "remix-action",
     "body": [
-      "export const action = async ($1) => {",
-      "  $2",
+      "export const action: ActionFunction = async ({ request }) => {",
+      "  const formData = await request.formData();",
+      "  $1",
+      "  redirect(`$2`);",
       "};"
     ],
     "description": "Function called on server side to handle data mutation and other actions."
@@ -98,7 +127,7 @@
       "  );",
       "}"
     ],
-    "description": "React component that renders whenever there is an error anywhere on the route, either during rendering or during data loading"
+    "description": "React component that renders whenever there is an error anywhere on the route, either during rendering or during data loading."
   },
   "Remix Handle": {
     "prefix": "remix-handle",
@@ -108,5 +137,106 @@
       "};"
     ],
     "description": "handle allows you to create application conventions with the useMatches() hook."
+  },
+  "Remix Session": {
+    "prefix": "remix-session",
+    "body": [
+      "import { createCookieSessionStorage } from \"remix\";",
+      "",
+      "const sessionSecret = process.env.SESSION_SECRET;",
+      "if (!sessionSecret) {",
+      "  throw new Error(\"SESSION_SECRET must be set\");",
+      "}",
+      "",
+      "const { getSession, commitSession, destroySession } =",
+      "  createCookieSessionStorage({",
+      "    // a Cookie from `createCookie` or the CookieOptions to create one",
+      "    cookie: {",
+      "      name: \"${1:__session}\",",
+      "",
+      "      // all of these are optional",
+      "      domain: \"${2:remix.run}\",",
+      "      expires: new Date(Date.now() + 60),",
+      "      httpOnly: true,",
+      "      maxAge: 60,",
+      "      path: \"/\",",
+      "      sameSite: \"lax\",",
+      "      secrets: [sessionSecret],",
+      "      secure: true",
+      "    }",
+      "  });",
+      "export { getSession, commitSession, destroySession };"
+    ],
+    "description": "Creates a cookie session storage template."
+  },
+  "Remix Link": {
+    "prefix": "remix-a-link",
+    "body": [
+      "<Link prefetch=\"${1|none,intent,render|}\" to={`$2`}>$3</Link>"
+    ],
+    "description": "Remix Link component that renders an anchor tag for navigation."
+  },
+  "Remix Pending Link": {
+    "prefix": "remix-a-link-pending",
+    "body": [
+      "function PendingLink({ to, children }) {",
+      "  const transition = useTransition();",
+      "  const path = useResolvedPath(to);",
+      "",
+      "  const isPending =",
+      "    transition.state === \"loading\" &&",
+      "    transition.location.pathname === path.pathname;",
+      "",
+      "  return (",
+      "    <Link",
+      "      data-pending={isPending ? \"true\" : null}",
+      "      to={to}",
+      "      children={children}",
+      "    />",
+      "  );",
+      "}"
+    ],
+    "description": "Pending link component."
+  },
+  "Remix Button Transition": {
+    "prefix": "remix-btn-transition",
+    "body": [
+      "function SubmitButton() {",
+      "  const transition = useTransition();",
+      "",
+      "  const text =",
+      "    transition.state === \"submitting\"",
+      "      ? \"Saving...\"",
+      "      : transition.state === \"loading\"",
+      "      ? \"Saved!\"",
+      "      : \"Go\";",
+      "",
+      "  return <button type=\"submit\">{text}</button>;",
+      "}"
+    ],
+    "description": "Transition submit button."
+  },
+  "Remix Button Transition Action": {
+    "prefix": "remix-btn-transition-action",
+    "body": [
+      "function SubmitButton() {",
+      "  const transition = useTransition();",
+      "",
+      "  const loadTexts = {",
+      "    actionRedirect: \"Data saved, redirecting...\",",
+      "    actionReload: \"Data saved, reloading fresh data...\"",
+      "  };",
+      "",
+      "  const text =",
+      "    transition.state === \"submitting\"",
+      "      ? \"Saving...\"",
+      "      : transition.state === \"loading\"",
+      "      ? loadTexts[transition.type] || \"Loading...\"",
+      "      : \"Go\";",
+      "",
+      "  return <button type=\"submit\"></button>;",
+      "}"
+    ],
+    "description": "Transition action submit button."
   }
 }

@@ -71,7 +71,7 @@ export const action: ActionFunction = async ({ request }) => {
 - `remix-headers`
 
 ```
-export function headers({ loaderHeaders, parentHeaders }) {
+export const headers = ({ loaderHeaders, parentHeaders }) => {
   return {
     "": ""
   };
@@ -283,6 +283,10 @@ Added new snippets:
 - `remix-a-link-pending`
 - `remix-btn-transition`
 - `remix-btn-transition-action`
+
+### 1.0.7
+
+Update `remix-headers` to be a const function like the others. ([#1](https://github.com/amimaro/remix-run-snippets/issues/1))
 
 ---
 

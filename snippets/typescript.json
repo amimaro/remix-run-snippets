@@ -63,7 +63,7 @@
   "Remix Headers": {
     "prefix": "remix-headers",
     "body": [
-      "export function headers({ loaderHeaders, parentHeaders }) {",
+      "export const headers = ({ loaderHeaders, parentHeaders }) => {",
       "  return {",
       "    \"$1\": $2",
       "  };",

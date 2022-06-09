@@ -290,6 +290,10 @@ Update `remix-headers` to be a const function like the others. ([#1](https://git
 
 Remove remix package import from `remix-session` prefix.
 
+### 1.0.9
+
+Small fixes
+
 ---
 
 **Enjoy!**

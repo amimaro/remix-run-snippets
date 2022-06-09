@@ -288,6 +288,10 @@ Added new snippets:
 
 Update `remix-headers` to be a const function like the others. ([#1](https://github.com/amimaro/remix-run-snippets/issues/1))
 
+### 1.0.8
+
+Remove remix package import from `remix-session` prefix.
+
 ---
 
 **Enjoy!**

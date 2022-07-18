@@ -4,8 +4,6 @@ Set of snippets for a faster [Remix](https://remix.run/) development.
 
 ## Features
 
-![remix snippet default function example](https://raw.githubusercontent.com/amimaro/remix-run-snippets/main/remix-fast-track.gif)
-
 Get access to the set of snippets by typing `remix` prefix to start developing.
 
 Simple as that. :D
@@ -31,7 +29,8 @@ export default function App() {
 - `remix-loader`
 
 ```
-export const loader: LoaderFunction = async () => {
+import type { LoaderArgs } from "@remix-run/node"
+export async function loader() {
   return {}
 };
 ```
@@ -39,9 +38,10 @@ export const loader: LoaderFunction = async () => {
 - `remix-loader-session`
 
 ```
-export const loader: LoaderFunction = async ({ request }) => {
+import type { LoaderArgs } from "@remix-run/node"
+export async function loader({ request }: LoaderArgs) {
   const session = await getSession(request.headers.get("Cookie"));
-  return json({}, {
+  return ${1|json,redirect|}($2, {
     headers: {
       "Set-Cookie": await commitSession(session),
     },
@@ -52,9 +52,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 - `remix-loader-params`
 
 ```
-export const loader: LoaderFunction = async ({ request }) => {
+import type { LoaderArgs } from "@remix-run/node"
+export async function loader({ request }: LoaderArgs) {
   const url = new URL(request.url);
-  const term = url.searchParams.get("term")
+  const term = url.searchParams.get("term");
   return {}
 };
 ```
@@ -62,9 +63,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 - `remix-action`
 
 ```
-export const action: ActionFunction = async ({ request }) => {
+import type { ActionArgs } from "@remix-run/node"
+export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
-  redirect('');
+  return redirect(`$2`);
 };
 ```
 

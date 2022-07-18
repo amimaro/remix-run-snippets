@@ -15,7 +15,8 @@
   "Remix Loader Function": {
     "prefix": "remix-loader",
     "body": [
-      "export const loader: LoaderFunction = async ($1) => {",
+      "import type { LoaderArgs } from \"@remix-run/node\"",
+      "export async function loader($1: LoaderArgs) {",
       "  $2",
       "  return {$3}",
       "};"
@@ -25,7 +26,8 @@
   "Remix Loader Function Session": {
     "prefix": "remix-loader-session",
     "body": [
-      "export const loader: LoaderFunction = async ({ request }) => {",
+      "import type { LoaderArgs } from \"@remix-run/node\"",
+      "export async function loader({ request }: LoaderArgs) {",
       "  const session = await getSession(request.headers.get(\"Cookie\"));",
       "  $3",
       "  return ${1|json,redirect|}($2, {",
@@ -40,7 +42,8 @@
   "Remix Loader Function Params": {
     "prefix": "remix-loader-params",
     "body": [
-      "export const loader: LoaderFunction = async ({ request }) => {",
+      "import type { LoaderArgs } from \"@remix-run/node\"",
+      "export async function loader({ request }: LoaderArgs) {",
       "  const url = new URL(request.url);",
       "  const $2 = url.searchParams.${1|get,getAll|}(\"$2\")",
       "  $3",
@@ -52,10 +55,11 @@
   "Remix Action Function": {
     "prefix": "remix-action",
     "body": [
-      "export const action: ActionFunction = async ({ request }) => {",
+      "import type { ActionArgs } from \"@remix-run/node\"",
+      "export async function action({ request }: ActionArgs) {",
       "  const formData = await request.formData();",
       "  $1",
-      "  redirect(`$2`);",
+      "  return redirect(`$2`);",
       "};"
     ],
     "description": "Function called on server side to handle data mutation and other actions."
@@ -131,11 +135,7 @@
   },
   "Remix Handle": {
     "prefix": "remix-handle",
-    "body": [
-      "export const handle = {",
-      "  $1",
-      "};"
-    ],
+    "body": ["export const handle = {", "  $1", "};"],
     "description": "handle allows you to create application conventions with the useMatches() hook."
   },
   "Remix Session": {
@@ -169,9 +169,7 @@
   },
   "Remix Link": {
     "prefix": "remix-a-link",
-    "body": [
-      "<Link prefetch=\"${1|none,intent,render|}\" to={`$2`}>$3</Link>"
-    ],
+    "body": ["<Link prefetch=\"${1|none,intent,render|}\" to={`$2`}>$3</Link>"],
     "description": "Remix Link component that renders an anchor tag for navigation."
   },
   "Remix Pending Link": {

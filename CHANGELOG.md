@@ -64,6 +64,10 @@ Update `remix-headers` to be a const function like the others. ([#1](https://git
 
 ## [1.1.0]
 
-[Update snippets to 1.6.5](https://github.com/remix-run/remix/blob/main/packages/remix-node/CHANGELOG.md#165).
+[Update snippets to 1.6.5](https://github.com/remix-run/remix/blob/main/packages/remix-node/CHANGELOG.md#165). ([#2](https://github.com/amimaro/remix-run-snippets/pull/2))
 - Add import statement
+
+## [1.1.1]
+
+- Add redirect import to `remix-action` ([#3](https://github.com/amimaro/remix-run-snippets/pull/3))
 

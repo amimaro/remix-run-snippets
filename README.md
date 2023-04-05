@@ -63,7 +63,7 @@ export async function loader({ request }: LoaderArgs) {
 - `remix-action`
 
 ```
-import type { ActionArgs } from "@remix-run/node"
+import type { ActionArgs, redirect } from "@remix-run/node"
 export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
   return redirect();

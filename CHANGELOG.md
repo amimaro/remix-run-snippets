@@ -71,3 +71,6 @@ Update `remix-headers` to be a const function like the others. ([#1](https://git
 
 - Add redirect import to `remix-action` ([#3](https://github.com/amimaro/remix-run-snippets/pull/3))
 
+## [1.2.0]
+
+- Support for Remix v2.0.0 ([#5](https://github.com/amimaro/remix-run-snippets/pull/5))

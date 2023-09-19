@@ -23,11 +23,38 @@
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
+  "Remix V2 - Loader Function": {
+    "prefix": "remix-v2-loader",
+    "body": [
+      "import type { LoaderFunctionArgs } from \"@remix-run/node\"",
+      "export async function loader($1: LoaderFunctionArgs) {",
+      "  $2",
+      "  return {$3}",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
   "Remix Loader Function Session": {
     "prefix": "remix-loader-session",
     "body": [
       "import type { LoaderArgs } from \"@remix-run/node\"",
       "export async function loader({ request }: LoaderArgs) {",
+      "  const session = await getSession(request.headers.get(\"Cookie\"));",
+      "  $3",
+      "  return ${1|json,redirect|}($2, {",
+      "    headers: {",
+      "      \"Set-Cookie\": await commitSession(session),",
+      "    },",
+      "  });",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
+  "Remix V2 - Loader Function Session": {
+    "prefix": "remix-v2-loader-session",
+    "body": [
+      "import type { LoaderFunctionArgs } from \"@remix-run/node\"",
+      "export async function loader({ request }: LoaderFunctionArgs) {",
       "  const session = await getSession(request.headers.get(\"Cookie\"));",
       "  $3",
       "  return ${1|json,redirect|}($2, {",
@@ -52,11 +79,36 @@
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
+  "Remix V2 - Loader Function Params": {
+    "prefix": "remix-v2-loader-params",
+    "body": [
+      "import type { LoaderFunctionArgs } from \"@remix-run/node\"",
+      "export async function loader({ request }: LoaderFunctionArgs) {",
+      "  const url = new URL(request.url);",
+      "  const $2 = url.searchParams.${1|get,getAll|}(\"$2\")",
+      "  $3",
+      "  return {$4}",
+      "};"
+    ],
+    "description": "Function called on server side before rendering to provide data to the route."
+  },
   "Remix Action Function": {
     "prefix": "remix-action",
     "body": [
       "import type { ActionArgs, redirect } from \"@remix-run/node\"",
       "export async function action({ request }: ActionArgs) {",
+      "  const formData = await request.formData();",
+      "  $1",
+      "  return redirect(`$2`);",
+      "};"
+    ],
+    "description": "Function called on server side to handle data mutation and other actions."
+  },
+  "Remix V2 - Action Function": {
+    "prefix": "remix-v2-action",
+    "body": [
+      "import type { ActionFunctionArgs, redirect } from \"@remix-run/node\"",
+      "export async function action({ request }: ActionFunctionArgs) {",
       "  const formData = await request.formData();",
       "  $1",
       "  return redirect(`$2`);",

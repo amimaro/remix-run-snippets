@@ -19,7 +19,7 @@
       "export async function loader($1: LoaderArgs) {",
       "  $2",
       "  return {$3}",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
@@ -30,7 +30,7 @@
       "export async function loader($1: LoaderFunctionArgs) {",
       "  $2",
       "  return {$3}",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
@@ -46,7 +46,7 @@
       "      \"Set-Cookie\": await commitSession(session),",
       "    },",
       "  });",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
@@ -62,7 +62,7 @@
       "      \"Set-Cookie\": await commitSession(session),",
       "    },",
       "  });",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
@@ -75,7 +75,7 @@
       "  const $2 = url.searchParams.${1|get,getAll|}(\"$2\")",
       "  $3",
       "  return {$4}",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
@@ -88,31 +88,29 @@
       "  const $2 = url.searchParams.${1|get,getAll|}(\"$2\")",
       "  $3",
       "  return {$4}",
-      "};"
+      "}"
     ],
     "description": "Function called on server side before rendering to provide data to the route."
   },
   "Remix Action Function": {
     "prefix": "remix-action",
     "body": [
-      "import type { ActionArgs, redirect } from \"@remix-run/node\"",
-      "export async function action({ request }: ActionArgs) {",
-      "  const formData = await request.formData();",
-      "  $1",
-      "  return redirect(`$2`);",
-      "};"
+      "import type { ActionArgs } from \"@remix-run/node\"",
+      "export async function action($1: ActionArgs) {",
+      "  $2",
+      "  return {$3}",
+      "}"
     ],
     "description": "Function called on server side to handle data mutation and other actions."
   },
   "Remix V2 - Action Function": {
     "prefix": "remix-v2-action",
     "body": [
-      "import type { ActionFunctionArgs, redirect } from \"@remix-run/node\"",
-      "export async function action({ request }: ActionFunctionArgs) {",
-      "  const formData = await request.formData();",
-      "  $1",
-      "  return redirect(`$2`);",
-      "};"
+      "import type { ActionFunctionArgs } from \"@remix-run/node\"",
+      "export async function action($1: ActionFunctionArgs) {",
+      "  $2",
+      "  return {$3}",
+      "}"
     ],
     "description": "Function called on server side to handle data mutation and other actions."
   },

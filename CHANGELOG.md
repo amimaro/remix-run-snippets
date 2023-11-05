@@ -74,3 +74,7 @@ Update `remix-headers` to be a const function like the others. ([#1](https://git
 ## [1.2.0]
 
 - Support for Remix v2.0.0 ([#5](https://github.com/amimaro/remix-run-snippets/pull/5))
+
+## [1.2.1]
+
+- Remove ';' for function and standardize action with loader ([#6](https://github.com/amimaro/remix-run-snippets/pull/6))
